@@ -34,5 +34,8 @@ RUN apt-get update && \
     cd ../../../ && \
     rm -rf opencv && \
     npm install -g opencv4nodejs --unsafe-perm && \
+    cd /usr/lib/node_modules/opencv4nodejs/build && \
+    make && \
+    rm -rf obj.target && \
     apt-get purge -y build-essential curl wget unzip git cmake && \
     apt-get autoremove -y --purge
